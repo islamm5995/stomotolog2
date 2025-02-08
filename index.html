@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Стоматология</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f9f9f9;
+            color: #333;
+        }
+        header {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 15px 5%;
+            background: #0077b6;
+            color: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        li{
+            list-style: none;
+        }
+        .nav-menu {
+            display: flex;
+            list-style: none;
+
+        }
+
+        .nav-menu ul {
+            display: flex;
+            gap: 15px;
+        }
+
+     
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: 0.3s;
+            font-size: 24px;
+        }
+        .nav-menu a:hover {
+            color: #ffdd57;
+        }
+        .burger-menu {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+        }
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(to right, #0077b6, #48cae4);
+            color: white;
+            animation: fadeIn 1.5s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .services, .gallery, .reviews, .booking {
+            text-align: center;
+            padding: 50px 5%;
+        }
+        .service-card, .gallery-item, .review, .booking form {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .service-card:hover, .gallery-item:hover, .review:hover, .booking form:hover {
+            transform: scale(1.05);
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .gallery img {
+            width: 250px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+        footer {
+            background: #0077b6;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        footer a {
+            color: #ffdd57;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                background: #0077b6;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 100%;
+                text-align: center;
+            }
+            .nav-menu.active {
+                display: flex;
+            }
+            .burger-menu {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2 class="logo">🦷 Ысык-Кол</h2>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="#gallery">Галерея</a></li>
+                <li><a href="#reviews">Отзывы</a></li>
+                <li><a href="#booking">Запись</a></li>
+            </ul>
+        </nav>
+        <div class="burger-menu">☰</div>
+    </header>
+    
+    <section class="hero">
+        <h1>Добро пожаловать в DentalCare</h1>
+        <p>Профессиональная стоматология для всей семьи</p>
+    </section>
+
+    <section id="services" class="services">
+        <h2>Наши услуги</h2>
+        <h2 class="service-card">🦷Лечение зубов</h2>
+        <h2 class="service-card">🪥Отбеливание</h2>
+        <h2 class="service-card">🔩Имплантация</h2>
+    </section>
+
+    <section id="gallery" class="gallery">
+        <h2>Галерея до/после</h2>
+        <img src="./do.png" alt="До">
+        <img src="./pos.png" alt="После">
+    </section>
+
+    <section id="reviews" class="reviews">
+        <h2>Отзывы пациентов</h2>
+        <div class="review">⭐⭐⭐⭐⭐Отличная клиника! Очень довольна лечением.</div>
+        <div class="review">⭐⭐⭐⭐ Профессиональные врачи, рекомендую!</div>
+    </section>
+
+    <section id="booking" class="booking">
+        <h2>Записаться на прием</h2>
+        <form>
+            <input type="text" placeholder="Ваше имя" required>
+            <input type="tel" placeholder="Телефон" required>
+            <input type="date" required>
+            <button type="submit">Записаться</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>Режим работы: 9:00 - 20:00 | 📍 ул. Ленина, 10</p>
+        <p>
+            <a href="#">VK</a> | <a href="#">Instagram</a> | <a href="#">Telegram</a>
+        </p>
+    </footer>
+    
+    <script>
+        document.querySelector('.burger-menu').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
